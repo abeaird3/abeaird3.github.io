@@ -15,6 +15,30 @@ This page was written in **Quarto** and published straight to GitHub.
 print("Hello from a rendered code chunk")
 ```
 
+## Load
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+sales = pd.read_csv("data/campus_cafe_sales.csv")
+
+sales.head()
+
+```
 
 
 
+```{python}
+#| echo: false
+
+print("This line was produced by python when the document was rendered, but the code that made it is hidden")
+```
+
+```{python}
+#| include: false
+
+# Runs silently. Nothing appears here, but sales exist for every chunk below it.
+sales = pd.read_csv("data/campus_cafe_sales.csv")
+
+```
